@@ -25,12 +25,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
-public class SecondActivity extends AppCompatActivity implements CocktailAdapter.ClickedItem, NavigationView.OnNavigationItemSelectedListener{
+public class NonActivity extends AppCompatActivity implements CocktailNonAdapter.ClickedItem, NavigationView.OnNavigationItemSelectedListener{
 
     Toolbar toolbar;
     RecyclerView recyclerView;
-    CocktailAdapter cocktailAdapter;
+    CocktailNonAdapter cocktailNonadapter;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle drawerToggle;
     NavigationView navigationView;
@@ -38,7 +37,7 @@ public class SecondActivity extends AppCompatActivity implements CocktailAdapter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_non);
 
         toolbar = findViewById(R.id.toolbar);
         recyclerView = findViewById(R.id.recyclerview);
@@ -47,9 +46,9 @@ public class SecondActivity extends AppCompatActivity implements CocktailAdapter
         this.setSupportActionBar(toolbar);
         this.getSupportActionBar().setTitle("");
 
-        cocktailAdapter = new CocktailAdapter(this::ClickedUser);
+        cocktailNonadapter = new CocktailNonAdapter(this::ClickedUser);
 
-        getAllCocktails();
+        getAllCocktailsNon();
 
         //drawer menu settings
         drawerLayout = findViewById(R.id.drawer);
@@ -60,24 +59,22 @@ public class SecondActivity extends AppCompatActivity implements CocktailAdapter
 
         navigationView = findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
-
     }
 
-    public void getAllCocktails(){
-        Call<List<CocktailResponse>> cocktaillist = ApiClient.getCocktailService().getAllCocktails();
+    public void getAllCocktailsNon(){
+        Call<List<CocktailResponseNon>> cocktaillist = ApiClient.getNonAlcoholicService().getAllCocktailsNon();
 
-        cocktaillist.enqueue((new Callback<List<CocktailResponse>>() {
+        cocktaillist.enqueue((new Callback<List<CocktailResponseNon>>() {
             @Override
-            public void onResponse(Call<List<CocktailResponse>> call, Response<List<CocktailResponse>> response) {
+            public void onResponse(Call<List<CocktailResponseNon>> call, Response<List<CocktailResponseNon>> response) {
                 if(response.isSuccessful()){
-                    List<CocktailResponse> cocktailResponse = response.body();
-                    cocktailAdapter.setData(cocktailResponse);
-                    recyclerView.setAdapter(cocktailAdapter);
+                    List<CocktailResponseNon> cocktailResponses = response.body();
+                    cocktailNonadapter.setData(cocktailResponses);
+                    recyclerView.setAdapter(cocktailNonadapter);
                 }
             }
-
             @Override
-            public void onFailure(Call<List<CocktailResponse>> call, Throwable t) {
+            public void onFailure(Call<List<CocktailResponseNon>> call, Throwable t) {
                 Log.e("failure", t.getLocalizedMessage());
 
 
@@ -87,8 +84,8 @@ public class SecondActivity extends AppCompatActivity implements CocktailAdapter
 
     //To detailpage
     @Override
-    public void ClickedUser(CocktailResponse cocktailResponse) {
-        startActivity(new Intent(this, CocktailDetailsActivity.class).putExtra("data", cocktailResponse));
+    public void ClickedUser(CocktailResponseNon cocktailResponse) {
+        startActivity(new Intent(this, DetailsNonActivity.class).putExtra("data", cocktailResponse));
     }
 
     //menu + searchbar
@@ -107,7 +104,7 @@ public class SecondActivity extends AppCompatActivity implements CocktailAdapter
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                cocktailAdapter.getFilter().filter(newText);
+                cocktailNonadapter.getFilter().filter(newText);
                 return false;
             }
         });
@@ -117,39 +114,39 @@ public class SecondActivity extends AppCompatActivity implements CocktailAdapter
     //Menu stuff
 
 
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
+
             case R.id.home:
-                Intent home = new Intent(SecondActivity.this, SecondActivity.class);
+                Intent home = new Intent(NonActivity.this, MainActivity.class);
                 startActivity(home);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.non:
-                Intent non = new Intent(SecondActivity.this, NonActivity.class);
+                Intent non = new Intent(NonActivity.this, NonActivity.class);
                 startActivity(non);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.light:
-                Intent light = new Intent(SecondActivity.this, LightActivity.class);
+                Intent light = new Intent(NonActivity.this, LightActivity.class);
                 startActivity(light);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.medium:
-                Intent medium = new Intent(SecondActivity.this, MediumActivity.class);
+                Intent medium = new Intent(NonActivity.this, MediumActivity.class);
                 startActivity(medium);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.strong:
-                Intent strong = new Intent(SecondActivity.this, StrongActivity.class);
+                Intent strong = new Intent(NonActivity.this, StrongActivity.class);
                 startActivity(strong);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
+
+
         }
         return false;
-
-
     }
-
-
 }

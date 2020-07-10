@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Cocktail Time</string>
+    <string name="app_name">CocktailTime</string>
+    <string name="users_list">Cocktails</string>
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
+    <string name="cocktails">Cocktails</string>
 </resources>

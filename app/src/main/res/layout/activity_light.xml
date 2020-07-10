@@ -8,7 +8,7 @@
     android:background="@drawable/background"
     android:weightSum="9"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".LightActivity"
     android:id="@+id/drawer"
     >
 
@@ -33,7 +33,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All Cocktails"
+        android:text="All light Cocktails"
         android:textSize="30dp"
         android:textColor="@color/colorWhite"
         android:textAlignment="center"

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailsMediumActivity"
+    android:background="@drawable/background">
+
+
+
+    <TextView
+        android:id="@+id/naam"
+        android:layout_width="match_parent"
+        android:text="Naam"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="283dp"
+        android:layout_height="218dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/sterkte"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorWhite"
+        android:layout_height="50dp"
+        android:text="Strength" />
+
+    <TextView
+        android:id="@+id/ingredient"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorWhite"
+        android:layout_height="50dp"
+        android:text="Ingredient" />
+
+    <TextView
+        android:id="@+id/benodigheden"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorWhite"
+        android:layout_height="50dp"
+        android:text="Equipments" />
+
+    <TextView
+        android:id="@+id/titleIngredient"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Ingredients"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/titlePreparation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Preparation"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp" />
+
+
+
+</LinearLayout>
