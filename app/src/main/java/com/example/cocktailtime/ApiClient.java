@@ -49,4 +49,24 @@ public class ApiClient {
         CocktailService strongAlcoholicService = getRetrofit().create(CocktailService.class);
         return strongAlcoholicService;
     }
+
+    public static CocktailService getCocktailAddService(){
+        CocktailService cocktailAddService = getRetrofit().create(CocktailService.class);
+        return cocktailAddService;
+    }
+
+    public static CocktailService getIngredientService(){
+        CocktailService ingredientService = getRetrofit().create(CocktailService.class);
+        return ingredientService;
+    }
+
+    public static CocktailService getEquipmentService(){
+        CocktailService equipmentService = getRetrofit().create(CocktailService.class);
+        return equipmentService;
+    }
+
+    public static CocktailService getInstructionsService(){
+        CocktailService instructionsService = getRetrofit().create(CocktailService.class);
+        return instructionsService;
+    }
 }

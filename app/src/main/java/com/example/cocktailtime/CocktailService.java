@@ -29,7 +29,20 @@ public interface CocktailService {
     @GET("cocktail/strength/strong")
     Call<List<CocktailResponseStrong>> getAllCocktailsStrong();
 
-//    @POST("create")
-//    Call<CocktailAddResponse> saveCocktial(@Body CocktailRequest cocktailRequest);
+    //Post first part of the Cocktail Name, image_location etc.
+    @POST("create")
+    Call<CocktailAddResponse> saveCocktail(@Body CocktailRequest cocktailRequest);
+
+    //Post ingredients to the new cocktail you created
+    @POST("createingredient")
+    Call<IngredientResponse> saveIngredient(@Body IngredientRequest userRequest);
+
+    @POST("createbenodigheid")
+    Call<EquipmentsResponse> saveEquipment(@Body EquipmentsRequest userRequest);
+
+    @POST("api/createinstructies")
+    Call<InstructionResponse> saveInstruction(@Body InstructionRequest userRequest);
+
+
 
 }
