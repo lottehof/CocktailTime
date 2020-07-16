@@ -121,7 +121,7 @@ public class MediumActivity extends AppCompatActivity implements CocktailMediumA
         switch (menuItem.getItemId()){
 
             case R.id.home:
-                Intent home = new Intent(MediumActivity.this, MainActivity.class);
+                Intent home = new Intent(MediumActivity.this, SecondActivity.class);
                 startActivity(home);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
@@ -144,6 +144,10 @@ public class MediumActivity extends AppCompatActivity implements CocktailMediumA
                 Intent strong = new Intent(MediumActivity.this, StrongActivity.class);
                 startActivity(strong);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.add:
+                Intent add = new Intent(MediumActivity.this, CocktailAddActivity.class);
+                startActivity(add);
                 break;
         }
         return false;

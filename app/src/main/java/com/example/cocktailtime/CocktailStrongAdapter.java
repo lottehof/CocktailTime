@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +52,9 @@ public class CocktailStrongAdapter extends RecyclerView.Adapter<CocktailStrongAd
 
         String naam = cocktailResponse.getNaam();
         int sterkte = cocktailResponse.getSterkte();
-        String image_location = cocktailResponse.getImage_location();
+        String image = cocktailResponse.getImage_location();
+
+        Picasso.with(context).load(image).into(holder.image_location);
 
 
 

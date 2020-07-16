@@ -120,7 +120,7 @@ public class NonActivity extends AppCompatActivity implements CocktailNonAdapter
         switch (menuItem.getItemId()){
 
             case R.id.home:
-                Intent home = new Intent(NonActivity.this, MainActivity.class);
+                Intent home = new Intent(NonActivity.this, SecondActivity.class);
                 startActivity(home);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
@@ -144,7 +144,10 @@ public class NonActivity extends AppCompatActivity implements CocktailNonAdapter
                 startActivity(strong);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
-
+            case R.id.add:
+                Intent add = new Intent(NonActivity.this, CocktailAddActivity.class);
+                startActivity(add);
+                break;
 
         }
         return false;

@@ -121,7 +121,7 @@ public class StrongActivity extends AppCompatActivity implements CocktailStrongA
         switch (menuItem.getItemId()){
 
             case R.id.home:
-                Intent home = new Intent(StrongActivity.this, MainActivity.class);
+                Intent home = new Intent(StrongActivity.this, SecondActivity.class);
                 startActivity(home);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
@@ -144,6 +144,10 @@ public class StrongActivity extends AppCompatActivity implements CocktailStrongA
                 Intent strong = new Intent(StrongActivity.this, StrongActivity.class);
                 startActivity(strong);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.add:
+                Intent add = new Intent(StrongActivity.this, CocktailAddActivity.class);
+                startActivity(add);
                 break;
         }
         return false;

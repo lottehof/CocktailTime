@@ -145,6 +145,10 @@ public class SecondActivity extends AppCompatActivity implements CocktailAdapter
                 startActivity(strong);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.add:
+                Intent add = new Intent(SecondActivity.this, CocktailAddActivity.class);
+                startActivity(add);
+                break;
         }
         return false;
 

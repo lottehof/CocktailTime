@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,8 +52,9 @@ public class CocktailLightAdapter extends RecyclerView.Adapter<CocktailLightAdap
 
         String naam = cocktailResponseLight.getNaam();
         int sterkte = cocktailResponseLight.getSterkte();
-        String image_location = cocktailResponseLight.getImage_location();
+        String image = cocktailResponseLight.getImage_location();
 
+        Picasso.with(context).load(image).into(holder.image_location);
 
 
         holder.naam.setText(naam);

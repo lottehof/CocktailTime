@@ -121,7 +121,7 @@ public class LightActivity extends AppCompatActivity implements CocktailLightAda
         switch (menuItem.getItemId()){
 
             case R.id.home:
-                Intent home = new Intent(LightActivity.this, MainActivity.class);
+                Intent home = new Intent(LightActivity.this, SecondActivity.class);
                 startActivity(home);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
@@ -144,6 +144,10 @@ public class LightActivity extends AppCompatActivity implements CocktailLightAda
                 Intent strong = new Intent(LightActivity.this, StrongActivity.class);
                 startActivity(strong);
                 Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.add:
+                Intent add = new Intent(LightActivity.this, CocktailAddActivity.class);
+                startActivity(add);
                 break;
         }
         return false;

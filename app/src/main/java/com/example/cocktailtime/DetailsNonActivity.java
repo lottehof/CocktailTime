@@ -7,11 +7,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.squareup.picasso.Picasso;
+
 public class DetailsNonActivity extends AppCompatActivity {
 
 
     TextView name, strength;
-    ImageView image_location;
+    ImageView imageView;
     CocktailResponseNon cocktailResponse;
 
     @Override
@@ -21,6 +23,7 @@ public class DetailsNonActivity extends AppCompatActivity {
 
         name = findViewById(R.id.naam);
         strength = findViewById(R.id.sterkte);
+        imageView = findViewById(R.id.imageView);
 
 
         Intent intent = getIntent();
@@ -29,7 +32,10 @@ public class DetailsNonActivity extends AppCompatActivity {
 
             String cocktailname = cocktailResponse.getNaam();
             int cocktailstrength = cocktailResponse.getSterkte();
-            String userjoined = cocktailResponse.getImage_location();
+
+            String image = cocktailResponse.getImage_location();
+
+            Picasso.with(this).load(image).into(imageView);
 
             name.setText(cocktailname);
             strength.setText("Strength: " + String.valueOf(cocktailstrength) + "%");
