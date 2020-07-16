@@ -3,7 +3,9 @@ package com.example.cocktailtime;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface CocktailService {
 
@@ -26,5 +28,8 @@ public interface CocktailService {
     //Cocktails higher than 20
     @GET("cocktail/strength/strong")
     Call<List<CocktailResponseStrong>> getAllCocktailsStrong();
+
+//    @POST("create")
+//    Call<CocktailAddResponse> saveCocktial(@Body CocktailRequest cocktailRequest);
 
 }
