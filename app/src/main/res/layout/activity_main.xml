@@ -54,6 +54,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
+    <Button
+        android:id="@+id/btnAddCocktail"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/button_round"
+        android:text="Add Cocktail"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
+        tools:layout_editor_absoluteX="104dp"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/tvInfo"
         android:layout_width="wrap_content"

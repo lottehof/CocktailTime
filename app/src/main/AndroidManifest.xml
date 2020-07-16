@@ -12,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DetailsStrongActivity"></activity>
+        <activity android:name=".EquipmentsActivity"></activity>
+        <activity android:name=".IngredientActivity" />
+        <activity android:name=".InstructionActivity" />
+        <activity android:name=".CocktailAddActivity" />
+        <activity android:name=".DetailsStrongActivity" />
         <activity android:name=".DetailsMediumActivity" />
         <activity android:name=".StrongActivity" />
         <activity android:name=".SecondActivity" />
@@ -32,4 +36,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

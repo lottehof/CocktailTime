@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText Name;
     private EditText Password;
     private TextView Info;
-    private Button Login;
+    private Button Login, addCocktail;
     private int counter = 5;
 
     @Override
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Password = (EditText)findViewById(R.id.etEmail);
         Info = (TextView)findViewById(R.id.tvInfo);
         Login = (Button)findViewById(R.id.btnRegister);
+        addCocktail = (Button)findViewById(R.id.btnAddCocktail);
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +36,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        addCocktail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCreateCocktail();
+            }
+        });
+
+    }
+
+    public void openCreateCocktail() {
+        Intent intent = new Intent(this, CocktailAddActivity.class);
+        startActivity(intent);
     }
 
     private void validate(String userName, String userPassword){
