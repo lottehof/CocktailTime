@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EquipmentsActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".EquipmentsActivity" />
         <activity android:name=".IngredientActivity" />
         <activity android:name=".InstructionActivity" />
         <activity android:name=".CocktailAddActivity" />

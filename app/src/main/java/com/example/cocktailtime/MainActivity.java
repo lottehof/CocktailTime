@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView Info;
     private Button Login, addCocktail;
     private int counter = 5;
+    private TextView Register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +24,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Name = (EditText)findViewById(R.id.etName);
-        Password = (EditText)findViewById(R.id.etEmail);
+        Password = (EditText)findViewById(R.id.etPassword);
         Info = (TextView)findViewById(R.id.tvInfo);
-        Login = (Button)findViewById(R.id.btnRegister);
+        Login = (Button)findViewById(R.id.btnLogin);
+        Register = findViewById(R.id.register);
 
 
         Login.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +38,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRegisterScreen();
+
+            }
+        });
     }
+
+    public void openRegisterScreen() {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
+
 
 
 
