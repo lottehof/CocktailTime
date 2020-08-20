@@ -37,11 +37,17 @@ public interface CocktailService {
     @POST("createingredient")
     Call<IngredientResponse> saveIngredient(@Body IngredientRequest userRequest);
 
+    //Post equipments to the new cocktail you created
     @POST("createbenodigheid")
     Call<EquipmentsResponse> saveEquipment(@Body EquipmentsRequest userRequest);
 
+    //Post instruction to the new cocktail you created
     @POST("api/createinstructies")
     Call<InstructionResponse> saveInstruction(@Body InstructionRequest userRequest);
+
+    //Post instruction to the new cocktail you created
+    @POST("register")
+    Call<RegisterResponse> saveRegister(@Body RegisterRequest userRequest);
 
 
 

@@ -14,8 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText Name;
     private EditText Password;
     private TextView Info;
-    private Button Login, addCocktail;
-    private int counter = 5;
+    private Button Login;
     private TextView Register;
 
     @Override
