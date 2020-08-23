@@ -1,22 +1,27 @@
 package com.example.cocktailtime;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 
 public class CocktailResponse implements Serializable {
     private int id;
     private String naam;
     private int sterkte;
     private String image_location;
-    private String ingredient;
+    private Object ingredienten;
+    private Object benodigheden;
+    private Object instructies;
 
-
-
-    public String getIngredient() {
-        return ingredient;
+    public Object getInstructies() {
+        return instructies;
     }
 
-    public void setIngredient(String ingredient) {
-        this.ingredient = ingredient;
+    public Object getBenodigheden() {
+        return benodigheden;
+    }
+
+    public Object getIngredienten() {
+        return ingredienten;
     }
 
     public int getSterkte() {
@@ -26,7 +31,6 @@ public class CocktailResponse implements Serializable {
     public void setSterkte(int sterkte) {
         this.sterkte = sterkte;
     }
-
 
     public int getId() {
         return id;
@@ -59,7 +63,6 @@ public class CocktailResponse implements Serializable {
                 "image_location" + image_location +
                 ", name'" + naam + '\'' +
                 ", strength='" + sterkte + '\'' +
-                ", ingredient='" + ingredient + '\'' +
                 '}';
     }
 }

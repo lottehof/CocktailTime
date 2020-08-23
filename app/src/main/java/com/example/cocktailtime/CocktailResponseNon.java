@@ -1,22 +1,33 @@
 package com.example.cocktailtime;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.Serializable;
+import java.lang.reflect.Array;
 
 public class CocktailResponseNon implements Serializable {
     private int id;
     private String naam;
     private int sterkte;
     private String image_location;
-    private String ingredient;
+    private Object ingredienten;
+    private Object benodigheden;
+    private Object instructies;
 
-
-
-    public String getIngredient() {
-        return ingredient;
+    public Object getInstructies() {
+        return instructies;
     }
 
-    public void setIngredient(String ingredient) {
-        this.ingredient = ingredient;
+    public Object getBenodigheden() {
+        return benodigheden;
+    }
+
+    public Object getIngredienten() {
+        return ingredienten;
     }
 
     public int getSterkte() {
@@ -59,7 +70,8 @@ public class CocktailResponseNon implements Serializable {
                 "image_location" + image_location +
                 ", name'" + naam + '\'' +
                 ", strength='" + sterkte + '\'' +
-                ", ingredient='" + ingredient + '\'' +
                 '}';
     }
+
+
 }
