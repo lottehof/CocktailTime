@@ -8,10 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-
-    private EditText Name;
+        private EditText Name;
     private EditText Password;
     private TextView Info;
     private Button Login;
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Name = (EditText)findViewById(R.id.etName);
         Password = (EditText)findViewById(R.id.etPassword);
@@ -34,8 +39,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 validate(Name.getText().toString(),Password.getText().toString());
 
+
+
             }
         });
+
+
 
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
+
+
 
 
 

@@ -45,9 +45,13 @@ public interface CocktailService {
     @POST("api/createinstructies")
     Call<InstructionResponse> saveInstruction(@Body InstructionRequest userRequest);
 
-    //Post instruction to the new cocktail you created
+    //Post register new user
     @POST("register")
     Call<RegisterResponse> saveRegister(@Body RegisterRequest userRequest);
+
+    //Get user
+    @GET("login")
+    Call<List<UserResponse>> getAllUsers();
 
 
 
