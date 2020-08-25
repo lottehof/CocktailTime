@@ -4,22 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-        private EditText Name;
+    private EditText Name;
     private EditText Password;
     private TextView Info;
     private Button Login;
     private TextView Register;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +38,32 @@ public class MainActivity extends AppCompatActivity {
         Register = findViewById(R.id.register);
 
 
+        Call<List<UserResponse>> userList = ApiClient.getUserService().getAllUsers();
+
+        userList.enqueue(new Callback<List<UserResponse>>() {
+            @Override
+            public void onResponse(Call<List<UserResponse>> call, Response<List<UserResponse>> response) {
+                if(response.isSuccessful()) {
+                    Log.e("success", response.body().toString());
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<UserResponse>> call, Throwable t) {
+                Log.e("failure", t.getLocalizedMessage());
+            }
+        });
+
+
+
+
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 validate(Name.getText().toString(),Password.getText().toString());
+
 
 
 
@@ -67,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void validate(String userName, String userPassword){
-        if((userName.equals("Lotte")) && (userPassword.equals("lotte"))){
+        if((userName.equals("`Lotte`")) && (userPassword.equals("lotte"))){
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent);
         }else{

@@ -75,8 +75,8 @@ public class ApiClient {
         return registerService;
     }
 
-    public static CocktailService getLoginService(){
-        CocktailService loginService = getRetrofit().create(CocktailService.class);
-        return loginService;
+    public static CocktailService getUserService(){
+        CocktailService userService = getRetrofit().create(CocktailService.class);
+        return userService;
     }
 }
