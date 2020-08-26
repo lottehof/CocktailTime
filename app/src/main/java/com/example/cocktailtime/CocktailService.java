@@ -40,7 +40,7 @@ public interface CocktailService {
     @POST("createbenodigheid")
     Call<EquipmentsResponse> saveEquipment(@Body EquipmentsRequest userRequest);
 
-    @POST("api/createinstructies")
+    @POST("createinstructies")
     Call<InstructionResponse> saveInstruction(@Body InstructionRequest userRequest);
 
 
