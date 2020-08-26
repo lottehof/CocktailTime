@@ -38,26 +38,6 @@ public class MainActivity extends AppCompatActivity {
         Register = findViewById(R.id.register);
 
 
-        Call<List<UserResponse>> userList = ApiClient.getUserService().getAllUsers();
-
-        userList.enqueue(new Callback<List<UserResponse>>() {
-            @Override
-            public void onResponse(Call<List<UserResponse>> call, Response<List<UserResponse>> response) {
-                if(response.isSuccessful()) {
-                    Log.e("success", response.body().toString());
-
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<UserResponse>> call, Throwable t) {
-                Log.e("failure", t.getLocalizedMessage());
-            }
-        });
-
-
-
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
