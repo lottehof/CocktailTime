@@ -10,10 +10,10 @@ import androidx.core.app.NotificationManagerCompat;
 public class ReminderBroadcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyLemubit")
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyCocktail")
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentTitle("Remind Lemubit Academy")
-                .setContentText("Hallo ik doe het goed")
+                .setContentTitle("Cocktail Added")
+                .setContentText("The cocktail has been added to the app :)")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);

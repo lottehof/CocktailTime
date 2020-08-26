@@ -76,7 +76,7 @@ public class InstructionActivity extends AppCompatActivity implements Navigation
 
                 long timeAtButtonClick = System.currentTimeMillis();
 
-                long tenSecondsInMillis = 500 * 10;
+                long tenSecondsInMillis = 100 * 10;
 
                 alarmManager.set(AlarmManager.RTC_WAKEUP,
                         timeAtButtonClick + tenSecondsInMillis,
@@ -90,10 +90,10 @@ public class InstructionActivity extends AppCompatActivity implements Navigation
     private void createNotificationChannel() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "LemubitReminderChannel";
-            String description = "Channel for Lemubit Reminder";
+            CharSequence name = "CocktailToegevoegdChannel";
+            String description = "Channel for Cocktail Toegevoegd";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel("notifyLemubit", name, importance);
+            NotificationChannel channel = new NotificationChannel("notifyCocktail", name, importance);
             channel.setDescription(description);
 
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
