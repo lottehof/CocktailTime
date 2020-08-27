@@ -102,7 +102,7 @@ public class InstructionActivity extends AppCompatActivity implements Navigation
     }
 
     public void openNextScreen() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
 
