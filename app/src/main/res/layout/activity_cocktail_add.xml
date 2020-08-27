@@ -79,6 +79,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"/>
+
+
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -87,14 +89,29 @@
         <Button
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
-            android:text="Cocktail Registration"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/button_round"
-            android:layout_marginTop="40dp"
-            android:layout_height="wrap_content" />
+            android:text="Cocktail Registration" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            tools:src="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/btnSelectImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="Select Image"/>
 
     </LinearLayout>
+
+
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="match_parent"
