@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content"
+
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/recyclerview_bg"
+        android:layout_height="94dp"
+
+        >
+
+
+        <ImageView
+            android:id="@+id/image_location"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="22dp"
+             />
+
+        <TextView
+            android:id="@+id/naam"
+            android:layout_width="195dp"
+            android:layout_height="27dp"
+            android:layout_alignParentTop="true"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="102dp"
+            android:layout_marginRight="102dp"
+            android:layout_marginBottom="45dp"
+            android:layout_toEndOf="@+id/image_location"
+            android:layout_toRightOf="@+id/image_location"
+            android:text="larntech"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/sterkte"
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginEnd="155dp"
+            android:layout_marginRight="155dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toEndOf="@+id/image_location"
+            android:layout_toRightOf="@+id/image_location"
+            android:text="Sterkte"
+            android:textColor="@color/colorBlack"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/imageMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/ic_navigate_next_black_24dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
