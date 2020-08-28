@@ -72,7 +72,7 @@ public class CocktailDetailsActivity extends AppCompatActivity {
             }
 
 
-            Picasso.with(this).load(image).into(imageView);
+            Picasso.with(this).load(image).placeholder(R.drawable.cocktail).into(imageView);
 
             name.setText(cocktailname);
             strength.setText(String.valueOf(cocktailstrength) + "%");

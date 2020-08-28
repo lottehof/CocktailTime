@@ -55,7 +55,9 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
 
         holder.naam.setText(naam);
         holder.sterkte.setText("Sterkte: " + String.valueOf(sterkte) + "%");
-        Picasso.with(context).load(image).into(holder.image_location);
+        Picasso.with(context).load(image).placeholder(R.drawable.cocktail).into(holder.image_location);
+
+
 
         holder.imageMore.setOnClickListener(new View.OnClickListener() {
             @Override
