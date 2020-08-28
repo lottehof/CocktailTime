@@ -127,9 +127,9 @@ public class InstructionActivity extends AppCompatActivity implements Navigation
             public void onResponse(Call<InstructionResponse> call, Response<InstructionResponse> response) {
 
                 if(response.isSuccessful()){
-                    Toast.makeText(InstructionActivity.this,"Saved successfully",Toast.LENGTH_LONG).show();
+//                    Toast.makeText(InstructionActivity.this,"Saved successfully",Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(InstructionActivity.this,"Request failed",Toast.LENGTH_LONG).show();
+//                    Toast.makeText(InstructionActivity.this,"Request failed",Toast.LENGTH_LONG).show();
                 }
             }
             @Override
@@ -148,27 +148,27 @@ public class InstructionActivity extends AppCompatActivity implements Navigation
             case R.id.home:
                 Intent home = new Intent(InstructionActivity.this, SecondActivity.class);
                 startActivity(home);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.non:
                 Intent non = new Intent(InstructionActivity.this, NonActivity.class);
                 startActivity(non);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.light:
                 Intent light = new Intent(InstructionActivity.this, LightActivity.class);
                 startActivity(light);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.medium:
                 Intent medium = new Intent(InstructionActivity.this, MediumActivity.class);
                 startActivity(medium);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.strong:
                 Intent strong = new Intent(InstructionActivity.this, StrongActivity.class);
                 startActivity(strong);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.add:
                 Intent add = new Intent(InstructionActivity.this, CocktailAddActivity.class);
