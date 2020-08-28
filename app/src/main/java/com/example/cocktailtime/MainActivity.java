@@ -18,7 +18,7 @@ public class MainActivity<Public> extends AppCompatActivity {
     private TextView Info;
     private Button Login, addCocktail;
     private int counter = 5;
-    private TextView Register;
+    private TextView Register, Noaccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class MainActivity<Public> extends AppCompatActivity {
         Info = (TextView)findViewById(R.id.tvInfo);
         Login = (Button)findViewById(R.id.btnLogin);
         Register = findViewById(R.id.register);
+        Noaccount = findViewById(R.id.noaccount);
 
 
         Login.setOnClickListener(new View.OnClickListener() {
@@ -49,10 +50,23 @@ public class MainActivity<Public> extends AppCompatActivity {
 
             }
         });
+
+        Noaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSecondActivityScreen();
+
+            }
+        });
     }
 
     public void openRegisterScreen() {
         Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
+    public void openSecondActivityScreen() {
+        Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
     }
 
