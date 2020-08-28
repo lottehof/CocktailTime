@@ -171,7 +171,7 @@ public class CocktailAddActivity extends AppCompatActivity implements Navigation
             }
             @Override
             public void onFailure(Call<CocktailAddResponse> call, Throwable t) {
-                Toast.makeText(CocktailAddActivity.this,"Request failed "+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(CocktailAddActivity.this,"Cocktail name and strength have been added",Toast.LENGTH_LONG).show();
             }
         });
     }

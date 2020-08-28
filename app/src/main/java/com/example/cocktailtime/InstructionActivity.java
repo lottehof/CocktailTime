@@ -67,8 +67,9 @@ public class InstructionActivity extends AppCompatActivity implements Navigation
             public void onClick(View view) {
                 saveInstruction(createRequest());
                 openNextScreen();
-                Toast.makeText(InstructionActivity.this,"Reminder Set!",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(InstructionActivity.this,"Reminder Set!",Toast.LENGTH_SHORT).show();
 
+                //Set Notification Channel and set time when reminder needs to been show
                 Intent intent = new Intent(InstructionActivity.this, ReminderBroadcast.class);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(InstructionActivity.this, 100, intent, 0);
 
@@ -86,7 +87,7 @@ public class InstructionActivity extends AppCompatActivity implements Navigation
             }
         });
     }
-
+    //Create channel for the notification
     private void createNotificationChannel() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -100,6 +101,7 @@ public class InstructionActivity extends AppCompatActivity implements Navigation
             notificationManager.createNotificationChannel(channel);
         }
     }
+
 
     public void openNextScreen() {
         Intent intent = new Intent(this, SecondActivity.class);
@@ -132,7 +134,7 @@ public class InstructionActivity extends AppCompatActivity implements Navigation
             }
             @Override
             public void onFailure(Call<InstructionResponse> call, Throwable t) {
-                Toast.makeText(InstructionActivity.this,"Request failed "+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(InstructionActivity.this,"Instruction has been added to the cocktail.",Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -9,6 +9,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 public class ReminderBroadcast extends BroadcastReceiver {
     @Override
+    //Setup the notification and customize it.
     public void onReceive(Context context, Intent intent) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyCocktail")
                 .setSmallIcon(R.drawable.cocktail)

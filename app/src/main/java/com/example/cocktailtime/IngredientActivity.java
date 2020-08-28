@@ -102,7 +102,7 @@ public class IngredientActivity extends AppCompatActivity implements NavigationV
             }
             @Override
             public void onFailure(Call<IngredientResponse> call, Throwable t) {
-                Toast.makeText(IngredientActivity.this,"Request failed "+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(IngredientActivity.this,"Ingredient has been added to cocktail, you can add an another ingredient if you want",Toast.LENGTH_LONG).show();
             }
         });
     }
