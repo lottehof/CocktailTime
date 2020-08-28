@@ -8,6 +8,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface CocktailService {
+    //All get requests
 
     //All cocktails
     @GET("cocktails")

@@ -25,7 +25,6 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
     private ClickedItem clickedItem;
 
 
-
     public CocktailAdapter(ClickedItem clickedItem) {
         this.clickedItem = clickedItem;
 
@@ -53,12 +52,6 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
         String naam = cocktailResponse.getNaam();
         int sterkte = cocktailResponse.getSterkte();
         String image = cocktailResponse.getImage_location();
-
-
-
-
-
-
 
         holder.naam.setText(naam);
         holder.sterkte.setText("Sterkte: " + String.valueOf(sterkte) + "%");
@@ -109,7 +102,6 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
     };
 
 
-
     public interface ClickedItem{
         public void ClickedUser(CocktailResponse cocktailResponse);
     }
@@ -126,11 +118,8 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
         ImageView imageMore;
         ImageView image_location;
 
-
-
         public CocktailAdapterVH(@NonNull View itemView) {
             super(itemView);
-
             naam = itemView.findViewById(R.id.naam);
             sterkte = itemView.findViewById(R.id.sterkte);
             imageMore = itemView.findViewById(R.id.imageMore);

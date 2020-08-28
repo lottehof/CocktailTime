@@ -46,12 +46,14 @@ public class DetailsLightActivity extends AppCompatActivity {
             int cocktailstrength = cocktailResponseLight.getSterkte();
             String image = cocktailResponseLight.getImage_location();
 
+            //Ingredients, benodigheden & instructions had to be fetch anotherway because they're arraylists. So it gets the arraylist.
 
             ArrayList ingredienten = (ArrayList) cocktailResponseLight.getIngredienten();
             ArrayList benodigheden = (ArrayList) cocktailResponseLight.getBenodigheden();
             ArrayList instructies = (ArrayList) cocktailResponseLight.getInstructies();
 
 
+            //then it loops through and gets everything from ingredient
             for (int i = 0; i < ingredienten.size(); i++) {
                 LinkedHashMap item = (LinkedHashMap) ingredienten.get(i);
                 total = total + "\n"  + "\n" + item.get("ingredient").toString();
@@ -72,6 +74,7 @@ public class DetailsLightActivity extends AppCompatActivity {
 
             name.setText(cocktailname);
             strength.setText(String.valueOf(cocktailstrength) + "%");
+            //And then it set its.
             ingredient.setText(total);
             benodigheid.setText(benodighedentotal);
             instructie.setText(instructiestotal);

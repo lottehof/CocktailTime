@@ -30,7 +30,6 @@ public class ApiClient {
         return cocktailService;
     }
 
-
     public static CocktailService getLightAlcoholicService(){
         CocktailService lightAlcoholicService = getRetrofit().create(CocktailService.class);
         return lightAlcoholicService;
