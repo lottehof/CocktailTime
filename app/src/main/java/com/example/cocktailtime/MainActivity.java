@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+public class MainActivity<Public> extends AppCompatActivity {
 
     private EditText Name;
     private EditText Password;
@@ -51,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
-
-
 
 
 

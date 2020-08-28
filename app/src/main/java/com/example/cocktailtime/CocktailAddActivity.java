@@ -96,14 +96,14 @@ public class CocktailAddActivity extends AppCompatActivity implements Navigation
             public void onResponse(Call<CocktailAddResponse> call, Response<CocktailAddResponse> response) {
 
                 if(response.isSuccessful()){
-                    Toast.makeText(CocktailAddActivity.this,"Saved successfully",Toast.LENGTH_LONG).show();
+               //     Toast.makeText(CocktailAddActivity.this,"Saved successfully",Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(CocktailAddActivity.this,"Request failed",Toast.LENGTH_LONG).show();
+                 //   Toast.makeText(CocktailAddActivity.this,"Request failed",Toast.LENGTH_LONG).show();
                 }
             }
             @Override
             public void onFailure(Call<CocktailAddResponse> call, Throwable t) {
-                Toast.makeText(CocktailAddActivity.this,"Request failed "+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+           //     Toast.makeText(CocktailAddActivity.this,"Request failed "+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -118,27 +118,27 @@ public class CocktailAddActivity extends AppCompatActivity implements Navigation
             case R.id.home:
                 Intent home = new Intent(CocktailAddActivity.this, SecondActivity.class);
                 startActivity(home);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.non:
                 Intent non = new Intent(CocktailAddActivity.this, NonActivity.class);
                 startActivity(non);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.light:
                 Intent light = new Intent(CocktailAddActivity.this, LightActivity.class);
                 startActivity(light);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.medium:
                 Intent medium = new Intent(CocktailAddActivity.this, MediumActivity.class);
                 startActivity(medium);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.strong:
                 Intent strong = new Intent(CocktailAddActivity.this, StrongActivity.class);
                 startActivity(strong);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.add:
                 Intent add = new Intent(CocktailAddActivity.this, CocktailAddActivity.class);

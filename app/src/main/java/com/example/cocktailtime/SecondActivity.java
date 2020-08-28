@@ -1,12 +1,12 @@
 package com.example.cocktailtime;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -19,6 +19,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.List;
 
 import retrofit2.Call;
@@ -49,8 +55,6 @@ public class SecondActivity extends AppCompatActivity implements CocktailAdapter
 
         cocktailAdapter = new CocktailAdapter(this::ClickedUser);
 
-        getAllCocktails();
-
         //drawer menu settings
         drawerLayout = findViewById(R.id.drawer);
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer);
@@ -60,30 +64,79 @@ public class SecondActivity extends AppCompatActivity implements CocktailAdapter
 
         navigationView = findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
+        getAllCocktails();
 
     }
 
+    //In this functions it checks if the response fetch the data succesfully, if so then it is put into cocktailadapter and then put into the recyclerview.
     public void getAllCocktails(){
         Call<List<CocktailResponse>> cocktaillist = ApiClient.getCocktailService().getAllCocktails();
 
-        cocktaillist.enqueue((new Callback<List<CocktailResponse>>() {
+        cocktaillist.enqueue(new Callback<List<CocktailResponse>>() {
             @Override
             public void onResponse(Call<List<CocktailResponse>> call, Response<List<CocktailResponse>> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
+
                     List<CocktailResponse> cocktailResponse = response.body();
+
                     cocktailAdapter.setData(cocktailResponse);
                     recyclerView.setAdapter(cocktailAdapter);
-                }
-            }
 
+                    //Saves the api in a file (stores it locally)
+                    try {
+                        FileOutputStream fos = openFileOutput("Cocktail.dat", Context.MODE_PRIVATE);
+                        ObjectOutputStream os = new ObjectOutputStream(fos);
+                        os.writeObject(cocktailResponse);
+                        os.close();
+                        fos.close();
+
+//                      Toast.makeText(getApplicationContext(), "Text saved" + getFilesDir() + "/" + "Cocktail.dat", Toast.LENGTH_LONG).show();
+
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    Menu menuNav = navigationView.getMenu();
+                    MenuItem nav_addCocktail = menuNav.findItem(R.id.add);
+                    nav_addCocktail.setEnabled(true);
+
+
+                }
+             }
+            //If system fails to get a response from api, than it will get its data from the file
             @Override
             public void onFailure(Call<List<CocktailResponse>> call, Throwable t) {
-                Log.e("failure", t.getLocalizedMessage());
+                        Log.e("failure", t.getLocalizedMessage());
+                        List<CocktailResponse> cocktailResponse = null;
+                        try {
+                            FileInputStream fis = openFileInput("Cocktail.dat");
+                            ObjectInputStream is = new ObjectInputStream(fis);
 
+                            cocktailResponse = (List<CocktailResponse>) is.readObject();
+                            is.close();
+                            fis.close();
+                            cocktailAdapter.setData(cocktailResponse);
+                            recyclerView.setAdapter(cocktailAdapter);
 
-            }
-        }));
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        }
+
+                        //disables add cocktail button because you're offline.
+                        Menu menuNav = navigationView.getMenu();
+                        MenuItem nav_addCocktail = menuNav.findItem(R.id.add);
+                        nav_addCocktail.setEnabled(false);
+                    }
+        });
     }
+
 
     //To detailpage
     @Override
@@ -115,35 +168,33 @@ public class SecondActivity extends AppCompatActivity implements CocktailAdapter
     }
 
     //Menu stuff
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.home:
                 Intent home = new Intent(SecondActivity.this, SecondActivity.class);
                 startActivity(home);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.non:
                 Intent non = new Intent(SecondActivity.this, NonActivity.class);
                 startActivity(non);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.light:
                 Intent light = new Intent(SecondActivity.this, LightActivity.class);
                 startActivity(light);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.medium:
                 Intent medium = new Intent(SecondActivity.this, MediumActivity.class);
                 startActivity(medium);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.strong:
                 Intent strong = new Intent(SecondActivity.this, StrongActivity.class);
                 startActivity(strong);
-                Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(this, "Home Btn Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.add:
                 Intent add = new Intent(SecondActivity.this, CocktailAddActivity.class);
