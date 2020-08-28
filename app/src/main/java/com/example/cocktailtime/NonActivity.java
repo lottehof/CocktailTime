@@ -88,7 +88,7 @@ public class NonActivity extends AppCompatActivity implements CocktailNonAdapter
                         os.close();
                         fos.close();
 
-                      Toast.makeText(getApplicationContext(), "Text saved" + getFilesDir() + "/" + "Cocktail.dat", Toast.LENGTH_LONG).show();
+//                      Toast.makeText(getApplicationContext(), "Text saved" + getFilesDir() + "/" + "Cocktail.dat", Toast.LENGTH_LONG).show();
 
 
                     } catch (FileNotFoundException e) {

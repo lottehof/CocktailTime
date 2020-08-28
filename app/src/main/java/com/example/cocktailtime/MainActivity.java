@@ -26,10 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button Login;
     private TextView Register;
-
-    private Button Login, addCocktail;
-    private int counter = 5;
-    private TextView Register, Noaccount;
+    private TextView Noaccount;
 
 
 

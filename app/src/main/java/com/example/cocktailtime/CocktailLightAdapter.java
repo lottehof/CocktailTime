@@ -54,7 +54,7 @@ public class CocktailLightAdapter extends RecyclerView.Adapter<CocktailLightAdap
         int sterkte = cocktailResponseLight.getSterkte();
         String image = cocktailResponseLight.getImage_location();
 
-        Picasso.with(context).load(image).into(holder.image_location);
+        Picasso.with(context).load(image).placeholder(R.drawable.cocktail).into(holder.image_location);
 
 
         holder.naam.setText(naam);

@@ -50,11 +50,6 @@ public class CocktailAddActivity extends AppCompatActivity implements Navigation
     ActionBarDrawerToggle drawerToggle;
     NavigationView navigationView;
 
-    private ImageView imageView;
-    private Button btnSelect;
-    private int IMG_REQUEST = 21;
-
-    private Bitmap bitmap;
 
 
     @Override
@@ -72,8 +67,6 @@ public class CocktailAddActivity extends AppCompatActivity implements Navigation
         naam = findViewById(R.id.naam);
         sterkte = findViewById(R.id.sterkte);
         reg_user = findViewById(R.id.btn_register);
-        imageView = findViewById(R.id.imageView);
-        btnSelect = findViewById(R.id.btnSelectImage);
 
         //drawer menu settings
         drawerLayout = findViewById(R.id.drawer);
@@ -85,60 +78,18 @@ public class CocktailAddActivity extends AppCompatActivity implements Navigation
         navigationView = findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
 
-        btnSelect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(intent, IMG_REQUEST);
-            }
-        });
-
 
         reg_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveCocktail(createRequest());
-//                uploadImage();
                 openNextScreen();
 
             }
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == IMG_REQUEST && resultCode == RESULT_OK && data != null) {
-
-            Uri path = data.getData();
-
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), path);
-                imageView.setImageBitmap(bitmap);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-        }
-    }
-
-//    private void uploadImage() {
-//
-//
-//        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-//        bitmap.compress(Bitmap.CompressFormat.JPEG, 75, byteArrayOutputStream);
-//        byte [] imageInByte = byteArrayOutputStream.toByteArray();
-//
-//        String encodedImage = Base64.encodeToString(imageInByte, Base64.DEFAULT);
-//
-//        Toast.makeText(this, encodedImage, Toast.LENGTH_SHORT).show();
-//
-//    }
 
     public void openNextScreen() {
         Intent intent = new Intent(this, IngredientActivity.class);
@@ -171,7 +122,7 @@ public class CocktailAddActivity extends AppCompatActivity implements Navigation
             }
             @Override
             public void onFailure(Call<CocktailAddResponse> call, Throwable t) {
-                Toast.makeText(CocktailAddActivity.this,"Request failed "+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(CocktailAddActivity.this,"Cocktail name and strenght have been added to the cocktail",Toast.LENGTH_LONG).show();
             }
         });
     }

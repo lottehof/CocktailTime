@@ -95,19 +95,6 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/button_round"
             android:text="Cocktail Registration" />
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            tools:src="@tools:sample/avatars" />
-
-        <Button
-            android:id="@+id/btnSelectImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:text="Select Image"/>
 
     </LinearLayout>
 

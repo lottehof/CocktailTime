@@ -51,7 +51,7 @@ public class CocktailMediumAdapter extends RecyclerView.Adapter<CocktailMediumAd
       int sterkte = cocktailResponseMedium.getSterkte();
       String image = cocktailResponseMedium.getImage_location();
 
-      Picasso.with(context).load(image).into(holder.image_location);
+      Picasso.with(context).load(image).placeholder(R.drawable.cocktail).into(holder.image_location);
 
 
       holder.naam.setText(naam);

@@ -53,7 +53,7 @@ public class CocktailNonAdapter extends RecyclerView.Adapter<CocktailNonAdapter.
         int sterkte = cocktailResponse.getSterkte();
         String image = cocktailResponse.getImage_location();
 
-        Picasso.with(context).load(image).into(holder.image_location);
+        Picasso.with(context).load(image).placeholder(R.drawable.cocktail).into(holder.image_location);
 
 
 
