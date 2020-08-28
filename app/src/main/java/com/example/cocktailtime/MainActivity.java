@@ -48,9 +48,7 @@ public class MainActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                validate(Name.getText().toString(),Password.getText().toString());
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
+                validate();
 
 
 
@@ -91,16 +89,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void validate(String userName, String userPassword){
-        if((userName.equals("")) && (userPassword.equals(""))){
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-            startActivity(intent);
-        }else{
-
-            Info.setText("The credentials you are using are invalid!");
-
-
-
-        }
+    private void validate() {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(intent);
     }
 }
