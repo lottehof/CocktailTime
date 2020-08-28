@@ -50,9 +50,7 @@ public interface CocktailService {
     @POST("register")
     Call<RegisterResponse> saveRegister(@Body RegisterRequest userRequest);
 
-    //Get user
-//    @GET("users")
-//    Call<List<UserResponse>> getAllUsers();
+
 
 
 
