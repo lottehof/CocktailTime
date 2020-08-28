@@ -13,16 +13,24 @@ import android.widget.Toast;
 
 import java.util.List;
 
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 public class MainActivity extends AppCompatActivity {
     private EditText Name;
     private EditText Password;
     private TextView Info;
+
     private Button Login;
     private TextView Register;
+
+    private Button Login, addCocktail;
+    private int counter = 5;
+    private TextView Register, Noaccount;
+
 
 
     @Override
@@ -36,13 +44,16 @@ public class MainActivity extends AppCompatActivity {
         Info = (TextView)findViewById(R.id.tvInfo);
         Login = (Button)findViewById(R.id.btnLogin);
         Register = findViewById(R.id.register);
+        Noaccount = findViewById(R.id.noaccount);
 
 
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validate(Name.getText().toString(),Password.getText().toString());
+//                validate(Name.getText().toString(),Password.getText().toString());
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
 
 
 
@@ -59,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Noaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSecondActivityScreen();
+
+            }
+        });
     }
 
     public void openRegisterScreen() {
@@ -66,14 +85,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    public void openSecondActivityScreen() {
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
 
 
 
 
 
     private void validate(String userName, String userPassword){
-        if((userName.equals("`Lotte`")) && (userPassword.equals("lotte"))){
+        if((userName.equals("")) && (userPassword.equals(""))){
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent);
         }else{

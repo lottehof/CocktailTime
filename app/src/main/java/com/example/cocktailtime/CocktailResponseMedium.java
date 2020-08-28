@@ -9,8 +9,21 @@ public class CocktailResponseMedium implements Serializable {
     private int sterkte;
     private String image_location;
     private String ingredient;
+    private Object ingredienten;
+    private Object benodigheden;
+    private Object instructies;
 
+    public Object getInstructies() {
+        return instructies;
+    }
 
+    public Object getBenodigheden() {
+        return benodigheden;
+    }
+
+    public Object getIngredienten() {
+        return ingredienten;
+    }
 
     public String getIngredient() {
         return ingredient;

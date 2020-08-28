@@ -8,6 +8,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface CocktailService {
+    //All get requests
 
     //All cocktails
     @GET("cocktails")
@@ -41,8 +42,8 @@ public interface CocktailService {
     @POST("createbenodigheid")
     Call<EquipmentsResponse> saveEquipment(@Body EquipmentsRequest userRequest);
 
-    //Post instruction to the new cocktail you created
-    @POST("api/createinstructies")
+
+    @POST("createinstructies")
     Call<InstructionResponse> saveInstruction(@Body InstructionRequest userRequest);
 
     //Post register new user

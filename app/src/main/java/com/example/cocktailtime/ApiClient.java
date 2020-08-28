@@ -7,6 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class ApiClient {
+
     private static Retrofit getRetrofit(){
 
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
@@ -28,7 +29,6 @@ public class ApiClient {
         CocktailService cocktailService = getRetrofit().create(CocktailService.class);
         return cocktailService;
     }
-
 
     public static CocktailService getLightAlcoholicService(){
         CocktailService lightAlcoholicService = getRetrofit().create(CocktailService.class);

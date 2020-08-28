@@ -7,17 +7,23 @@ public class CocktailResponseLight implements Serializable {
     private String naam;
     private int sterkte;
     private String image_location;
-    private String ingredient;
 
+    private Object ingredienten;
+    private Object benodigheden;
+    private Object instructies;
 
-
-    public String getIngredient() {
-        return ingredient;
+    public Object getInstructies() {
+        return instructies;
     }
 
-    public void setIngredient(String ingredient) {
-        this.ingredient = ingredient;
+    public Object getBenodigheden() {
+        return benodigheden;
     }
+
+    public Object getIngredienten() {
+        return ingredienten;
+    }
+
 
     public int getSterkte() {
         return sterkte;
@@ -59,7 +65,6 @@ public class CocktailResponseLight implements Serializable {
                 "image_location" + image_location +
                 ", name'" + naam + '\'' +
                 ", strength='" + sterkte + '\'' +
-                ", ingredient='" + ingredient + '\'' +
                 '}';
     }
 }

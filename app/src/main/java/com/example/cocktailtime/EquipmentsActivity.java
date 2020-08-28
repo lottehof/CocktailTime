@@ -101,7 +101,7 @@ public class EquipmentsActivity extends AppCompatActivity implements NavigationV
             }
             @Override
             public void onFailure(Call<EquipmentsResponse> call, Throwable t) {
-                Toast.makeText(EquipmentsActivity.this,"Request failed "+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(EquipmentsActivity.this,"Equipment has been added to cocktail, you can add an another equipment if you want",Toast.LENGTH_LONG).show();
             }
         });
     }

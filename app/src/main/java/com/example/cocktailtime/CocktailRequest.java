@@ -4,6 +4,7 @@ public class CocktailRequest {
 
     private String  naam;
     private int  sterkte;
+    private String imageLocation;
 
     public String getNaam() {
         return naam;
@@ -19,5 +20,13 @@ public class CocktailRequest {
 
     public void setSterkte(int sterkte) {
         this.sterkte = sterkte;
+    }
+
+    public String getImageLocation() {
+        return imageLocation;
+    }
+
+    public void setImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
     }
 }
